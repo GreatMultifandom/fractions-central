@@ -9,13 +9,13 @@ minecraft_bot_id = 5086631591
 gaming_chat = -1001286994009
 
 @app.on_message(filters=filters.new_chat_members)
-def new_chat(m, c):
+def new_chat(c, m):
     if m.new_chat_members[0] != app.get_me().id:
         return
     app.send_message(m.chat.id, 'Для инициализации чата фракции ВМФ пропишите ".addchat имя_фракции".')
 
 @app.on_message()
-def main_handler(m, c):
+def main_handler(c, m):
     if m.from_user.id != minecraft_bot_id and m.chat.id != gaming_chat:
         if not m.text.startswith('.addchat '):
             return
