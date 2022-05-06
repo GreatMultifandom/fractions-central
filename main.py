@@ -3,7 +3,7 @@ import config
 from db import Database
 
 db = Database()
-app = Client('user', config.api_id, api.hash, 'a', 'a', 'a')
+app = Client('user', config.api_id, config.api_hash, 'a', 'a', 'a')
 
 minecraft_bot_id = 5086631591
 gaming_chat = -1001286994009
