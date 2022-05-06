@@ -23,7 +23,6 @@ def main_handler(c, m):
         if not m.text.startswith('.addchat '):
             return
         db.add_chat(m.text.split(' ', 1)[1], m.chat.id)
-        return
     print(4)
     for chat in db.get_chats():
         app.send_message(chat_id=chat['id'], text=message.text)
